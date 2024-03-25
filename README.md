@@ -13,7 +13,7 @@ spec:
     namespace: default
   source:
     repoURL: https://github.com/tomklapiscak/argocdtest
-    path: applications/root-applications/account-root
+    path: root-applications/account-root
     targetRevision: "main"
     helm:
       parameters: []

@@ -1,4 +1,3 @@
-
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
@@ -14,11 +13,6 @@ spec:
   template:
     metadata:
       name: "test{{ .Values.i }}app"
-      labels:
-        cloud: aws
-        environment: '{{ .Values.account.id }}'
-        region: '{{ `{{ .region.id }}` }}'
-        cluster: '{{ `{{ .cluster.id }}` }}'
       annotations:
         argocd.argoproj.io/sync-wave: "{{.Values.i}}"
     spec:
