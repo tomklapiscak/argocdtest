@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: test2app
+  name: testapp.z
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "2"
@@ -19,6 +19,8 @@ spec:
       parameters:
         - name: "i"
           value: "2"
+        - name: "id"
+          value: "z"
   syncPolicy:
     automated:
       prune: true

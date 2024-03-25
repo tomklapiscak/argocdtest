@@ -9,12 +9,15 @@ metadata:
 spec:
   goTemplate: true
   generators:
-    - list:
-        elements:
-          - "i": "1"
+    - git:
+        repoURL: "https://github.com/tomklapiscak/argocdtest"
+        revision: "main"
+        files:
+        - path: "config/*.yaml"
+          
   template:
     metadata:
-      name: "test{{`{{.i}}`}}app"
+      name: "testapp.{{`{{.id}}`}}"
       annotations:
         argocd.argoproj.io/sync-wave: "{{`{{.i}}`}}"
     spec:
@@ -30,6 +33,8 @@ spec:
           parameters:
             - name: "i"
               value: "{{ `{{.i}}`  }}"
+            - name: "id"
+              value: "{{ `{{.id}}`  }}"
       syncPolicy:
         automated:
           prune: true

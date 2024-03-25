@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: dummy-{{ .Values.i }}
+  name: dummy-{{ .Values.id }}
   namespace: 
 data:
   i: "{{ .Values.i }}"
