@@ -1,11 +1,11 @@
-# argocdtest
-
-```yaml
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: testroot
+  name: test0app
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   project: mas
   destination:
@@ -13,10 +13,12 @@ spec:
     namespace: default
   source:
     repoURL: https://github.com/tomklapiscak/argocdtest
-    path: applications/root-applications/account-root
+    path: applications/test
     targetRevision: "main"
     helm:
-      parameters: []
+      parameters:
+        - name: "i"
+          value: "0"
   syncPolicy:
     automated:
       prune: true
@@ -24,4 +26,3 @@ spec:
     syncOptions:
       - CreateNamespace=false
       - RespectIgnoreDifferences=true
-```

@@ -1,0 +1,43 @@
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: test1appset
+  namespace: argocd
+spec:
+  goTemplate: true
+  generators:
+    - list:
+        elements:
+          - "i": "1"
+  template:
+    metadata:
+      name: "test{{ .Values.i }}app"
+      labels:
+        cloud: aws
+        environment: '{{ .Values.account.id }}'
+        region: '{{ `{{ .region.id }}` }}'
+        cluster: '{{ `{{ .cluster.id }}` }}'
+      annotations:
+        argocd.argoproj.io/sync-wave: "{{.Values.i}}"
+    spec:
+      project: mas
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+      source:
+        repoURL: https://github.com/tomklapiscak/argocdtest
+        path: applications/test
+        targetRevision: "main"
+        helm:
+          parameters:
+            - name: "i"
+              value: "{{ .Values.i }}"
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=false
+          - RespectIgnoreDifferences=true

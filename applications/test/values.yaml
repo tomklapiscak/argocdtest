@@ -1,0 +1,145 @@
+---
+
+ibm_mas_suite_configs:
+  - mas_config_name: "tgke-bas-system"
+    mas_config_chart: ibm-mas-bas-config
+    mas_config_scope: system
+    mas_workspace_id: masdev
+    mas_application_id: 
+    mas_config_kind: "bascfgs"
+    mas_config_api_version: "config.mas.ibm.com"
+
+    enable_postdelete_hook: True
+
+    mas_instance_id: tgke
+    dro_api_token: <path:arn:aws:secretsmanager:us-east-2:435377327995:secret:fyre-dev/noble3/dro#dro_api_token>
+    dro_endpoint_url: <path:arn:aws:secretsmanager:us-east-2:435377327995:secret:fyre-dev/noble3/dro#dro_url>
+    dro_contact:
+      email: klapitom@uk.ibm.com
+      first_name: Tom
+      last_name: Klapiscak
+    dro_ca:
+      crt: |
+        -----BEGIN CERTIFICATE-----
+        MIIDcTCCAlmgAwIBAgIIHjZuMLTY6u0wDQYJKoZIhvcNAQELBQAwJjEkMCIGA1UE
+        AwwbaW5ncmVzcy1vcGVyYXRvckAxNzA3MTQ5MDY0MB4XDTI0MDIwNTE2MDQyNFoX
+        DTI2MDIwNDE2MDQyNVowKDEmMCQGA1UEAwwdKi5hcHBzLm5vYmxlMy5jcC5meXJl
+        LmlibS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCmVyxZwjbv
+        U5gOClpB0CxT5LDB368YoyxNGaxKTMxE46b9GkK1Bu3uLXYwLMr8Jig1q5rMeLE8
+        yy3wKuDJwoaf+/vMcl4VVaXbTuasfcEq0QcBYiBzHNB5R6oRUUbcnveXpE1GCfUn
+        5VFQkdHX3I7gCYeXTI1IZDHXQ4HJNmwmJJUP497zw4oxldvFhd9+xodmH5aPayM4
+        cPbSSOdLDHHavpf1zQsftzfFCXwiJ7GhRkmj9GHelWuuuQ7lRj+psoVAsjFAKtrX
+        pxer3HOp4BABTp51j+QB8ExeUicqX23rQt2k2F8BgWNZMC0mQyBh5brCKNCN/TRv
+        SCZuXP/nmk3DAgMBAAGjgaAwgZ0wDgYDVR0PAQH/BAQDAgWgMBMGA1UdJQQMMAoG
+        CCsGAQUFBwMBMAwGA1UdEwEB/wQCMAAwHQYDVR0OBBYEFPVd2ylTNpnGts2R1lrE
+        yOF4y+aZMB8GA1UdIwQYMBaAFBGGJqwK7+Q2DYf/aQ+GDACweBVtMCgGA1UdEQQh
+        MB+CHSouYXBwcy5ub2JsZTMuY3AuZnlyZS5pYm0uY29tMA0GCSqGSIb3DQEBCwUA
+        A4IBAQAnuNruPzz8w8Hn4tdMuvkC68OnM4CmtS31k4b89sH8DUZRtfhvtdxbbhjk
+        Vd8XnHyFACk1hIVvh3J4akp3Nb3llfKI1yUw1tbDzRUxDydZmL7zNPEN8OTNcN+0
+        6F8j+DN8tyVHVKZ2Uzf3PwQMWomFriKJADVyYfri8WTxep4tzelGzZnSof2De7h6
+        qVoj3MvcVsVvGLdORgM40va5ULsCSbVnhII27f1uYB2bblpFsbY3Qjy0jdwRXy+w
+        9MLQB89VgD98xClZgFKnKCfYznPFFDZZbK4+Y3TG0RKiNgFEPeEgNCnel+jbqhvG
+        t/NmcSnC27gFqNr5zMlHVIELELgi
+        -----END CERTIFICATE-----
+        -----BEGIN CERTIFICATE-----
+        MIIDDDCCAfSgAwIBAgIBATANBgkqhkiG9w0BAQsFADAmMSQwIgYDVQQDDBtpbmdy
+        ZXNzLW9wZXJhdG9yQDE3MDcxNDkwNjQwHhcNMjQwMjA1MTYwNDI0WhcNMjYwMjA0
+        MTYwNDI1WjAmMSQwIgYDVQQDDBtpbmdyZXNzLW9wZXJhdG9yQDE3MDcxNDkwNjQw
+        ggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCpaz/JX2StBDEFopdBfalm
+        ee5zxlAaRTl5JAFa17iWMICpL9z3C8l22DcGahTHCkjzMexl8CtB4HM2cQHPiBnX
+        No7gmKwCHJ2MgRCf4KpMMS1DnpojDkuv2rQupIq4Y+Qt4DQ5e/TlV1BP24Oxm1d2
+        hfIb9AOMGa5S+erj3zK1MtlAbpXYivz4mFDsIpcZ0LVwBfQnHqbDV6+MSpfB3J5F
+        MOoOu//SxJ6tQqQpYBA7BGYKiULDxaV4C46mGJd73SOGZFIgHSM8kC+uAxO0PGGm
+        wF82dwxnwS1VLhYBNumSnPmBckeDkZ//H/xe6fp2XY9bi70P3nYtiC5/7azOrcp3
+        AgMBAAGjRTBDMA4GA1UdDwEB/wQEAwICpDASBgNVHRMBAf8ECDAGAQH/AgEAMB0G
+        A1UdDgQWBBQRhiasCu/kNg2H/2kPhgwAsHgVbTANBgkqhkiG9w0BAQsFAAOCAQEA
+        JSDcANsOFcfRyh/DGTftKLKLzjl6+YES91FMIHj+1M6nfxanoOXT/nF1FuhU1znU
+        oj96MUuJEiq0AKxNO69V0dvv3b6pit1jKghXqXXMe2NuV5AA6745uXDCQ9ksxM3Q
+        +YjAQXm6d425v1OWZHWyLc0qUQkvNPTFWp+TaILLDT33E8+HgdH4cMleQAim1twz
+        e0NhM9viZxwJ+skvt+m85PbDjZA8pwJoZJyJCO7XADys48fRK06ZKucoPG2eKOQ6
+        YTKza4jCTInEQU0NImVsOlDTD8KP0BYzzMOWc1mxWdI6I73LzIpExYgNT/C704eU
+        ZyOujzUQnmrI9k1AGALdmA==
+        -----END CERTIFICATE-----
+
+  - mas_config_name: "tgke-mongo-system"
+    mas_config_chart: ibm-mas-mongo-config
+    mas_config_scope: system
+    mas_workspace_id: masdev
+    mas_application_id: 
+    mas_config_kind: "mongocfgs"
+    mas_config_api_version: "config.mas.ibm.com"
+
+    mas_instance_id: tgke
+    username: <path:arn:aws:secretsmanager:us-east-2:435377327995:secret:fyre-dev/noble3/tgke/mongo#username>
+    password: <path:arn:aws:secretsmanager:us-east-2:435377327995:secret:fyre-dev/noble3/tgke/mongo#password>
+    config:
+      hosts:
+        - host: b2f53ae4-95eb-4971-b57c-8e07dbce04e3-0.c5kmhkid0ujpmrucb800.databases.appdomain.cloud
+          port: 32250
+        - host: b2f53ae4-95eb-4971-b57c-8e07dbce04e3-1.c5kmhkid0ujpmrucb800.databases.appdomain.cloud
+          port: 32250
+        - host: b2f53ae4-95eb-4971-b57c-8e07dbce04e3-2.c5kmhkid0ujpmrucb800.databases.appdomain.cloud
+          port: 32250
+      configDb: admin
+      authMechanism: DEFAULT
+      retryWrites: false
+      credentials:
+        secretName: "system-mongo-credentials"
+    certificates:
+      - alias: ca
+        crt: |
+          -----BEGIN CERTIFICATE-----
+          MIIDDzCCAfegAwIBAgIJANEH58y2/kzHMA0GCSqGSIb3DQEBCwUAMB4xHDAaBgNV
+          BAMME0lCTSBDbG91ZCBEYXRhYmFzZXMwHhcNMTgwNjI1MTQyOTAwWhcNMjgwNjIy
+          MTQyOTAwWjAeMRwwGgYDVQQDDBNJQk0gQ2xvdWQgRGF0YWJhc2VzMIIBIjANBgkq
+          hkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8lpaQGzcFdGqeMlmqjffMPpIQhqpd8qJ
+          Pr3bIkrXJbTcJJ9uIckSUcCjw4Z/rSg8nnT13SCcOl+1to+7kdMiU8qOWKiceYZ5
+          y+yZYfCkGaiZVfazQBm45zBtFWv+AB/8hfCTdNF7VY4spaA3oBE2aS7OANNSRZSK
+          pwy24IUgUcILJW+mcvW80Vx+GXRfD9Ytt6PRJgBhYuUBpgzvngmCMGBn+l2KNiSf
+          weovYDCD6Vngl2+6W9QFAFtWXWgF3iDQD5nl/n4mripMSX6UG/n6657u7TDdgkvA
+          1eKI2FLzYKpoKBe5rcnrM7nHgNc/nCdEs5JecHb1dHv1QfPm6pzIxwIDAQABo1Aw
+          TjAdBgNVHQ4EFgQUK3+XZo1wyKs+DEoYXbHruwSpXjgwHwYDVR0jBBgwFoAUK3+X
+          Zo1wyKs+DEoYXbHruwSpXjgwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQsFAAOC
+          AQEAJf5dvlzUpqaix26qJEuqFG0IP57QQI5TCRJ6Xt/supRHo63eDvKw8zR7tlWQ
+          lV5P0N2xwuSl9ZqAJt7/k/3ZeB+nYwPoyO3KvKvATunRvlPBn4FWVXeaPsG+7fhS
+          qsejmkyonYw77HRzGOzJH4Zg8UN6mfpbaWSsyaExvqknCp9SoTQP3D67AzWqb1zY
+          doqqgGIZ2nxCkp5/FXxF/TMb55vteTQwfgBy60jVVkbF7eVOWCv0KaNHPF5hrqbN
+          i+3XjJ7/peF3xMvTMoy35DcT3E2ZeSVjouZs15O90kI3k2daS2OHJABW0vSj4nLz
+          +PQzp/B9cQmOO8dCe049Q3oaUA==
+          -----END CERTIFICATE-----
+  - mas_config_name: "tgke-sls-system"
+    mas_config_chart: ibm-mas-sls-config
+    mas_config_scope: system
+    mas_workspace_id: masdev
+    mas_application_id: 
+    mas_config_kind: "slscfgs"
+    mas_config_api_version: "config.mas.ibm.com"
+
+    mas_instance_id: tgke
+    registration_key: <path:arn:aws:secretsmanager:us-east-2:435377327995:secret:fyre-dev/noble3/tgke/sls#registration_key>
+    url: "https://sls.mas-tgke-sls.svc"
+    ca:
+      crt: |
+        -----BEGIN CERTIFICATE-----
+        MIIDvTCCAqWgAwIBAgIRAJAyKlLvbs6MqbOGlY5ljxEwDQYJKoZIhvcNAQELBQAw
+        eDELMAkGA1UEBhMCR0IxDzANBgNVBAcTBkxvbmRvbjEPMA0GA1UECRMGTG9uZG9u
+        MS0wKwYDVQQLEyRJQk0gU3VpdGUgTGljZW5zZSBTZXJ2aWNlIChJbnRlcm5hbCkx
+        GDAWBgNVBAMTD3Nscy5zbHMuaWJtLmNvbTAeFw0yNDAzMTIxNDQxMDFaFw00NDAz
+        MDcxNDQxMDFaMHgxCzAJBgNVBAYTAkdCMQ8wDQYDVQQHEwZMb25kb24xDzANBgNV
+        BAkTBkxvbmRvbjEtMCsGA1UECxMkSUJNIFN1aXRlIExpY2Vuc2UgU2VydmljZSAo
+        SW50ZXJuYWwpMRgwFgYDVQQDEw9zbHMuc2xzLmlibS5jb20wggEiMA0GCSqGSIb3
+        DQEBAQUAA4IBDwAwggEKAoIBAQCxC1H016cS3mHQtGxeQFkrdowD5cek0v+vHv7H
+        b12iOgy9a9rb1YzR3GJo1NQgU2jiaobT70EY4oBI6gO/2uGthPgsmKpcpuDom+tS
+        NAhIQs+UecFzlW+JZ/7niy/DN9/hb6ZBhExjnoQU40T9RnvXIY8GDCauhgropi/o
+        VB7ZHFV7vrVmhqjc8yl8V+4SpKGlTgB7mEGsX0O/yTkc6OnP32MVqTmBP+QvBDGJ
+        tQD6EU/T81hQOrIIS766SwOAYb5J594fuoaNE94N1CN+jcqYp+/WFZo0CVxptQnO
+        nArezJvs/j8ZYQIguezbaXMZOvqMzWsOTXxhKVykn29pKNmvAgMBAAGjQjBAMA4G
+        A1UdDwEB/wQEAwICBDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBQZf57i/d9g
+        1NicKxY0c7CPrQu2ZjANBgkqhkiG9w0BAQsFAAOCAQEAjOGIXnO6JpcUMh1mHTWS
+        7mgNXtPwL0qo01ON0YhAZ/Sq7SBir7BKNfAJksNF+0yoOjjt/C/hJWW/J9vUUyvA
+        CtEmXmaOavss6pjqzXVhdQFWFbZgCI/x4WaEdSZUcOGUK3I0m+wSDRu9YZRTj4d/
+        oUqIPXDSrD125rgHhxuwu4VKLHI960Q6m84r9q69fDz0i5rfzRxJQUiyB/ZMMjXP
+        zd+F1mPbXuRaOsB6cqKSWa4zVfH8vgRph47MKSePw/jk28ZXL7878Ga9u3NQsBzd
+        zgG3vip8uJgLTpf5sMznPqNyogXOkIawmRzt5IIXkTtOw723jiasxzXVtBhtUZ/T
+        Qw==
+        -----END CERTIFICATE-----
