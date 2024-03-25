@@ -5,4 +5,4 @@ metadata:
   name: dummy-{{ .Values.i }}
   namespace: 
 data:
-  hello: world
+  i: "{{ .Values.i }}"
