@@ -12,9 +12,9 @@ spec:
           - "i": "1"
   template:
     metadata:
-      name: "test{{ .Values.i }}app"
+      name: "test{{ .i }}app"
       annotations:
-        argocd.argoproj.io/sync-wave: "{{.Values.i}}"
+        argocd.argoproj.io/sync-wave: "{{.i}}"
     spec:
       project: mas
       destination:
@@ -27,7 +27,7 @@ spec:
         helm:
           parameters:
             - name: "i"
-              value: "{{ .Values.i }}"
+              value: "{{ .i }}"
       syncPolicy:
         automated:
           prune: true
